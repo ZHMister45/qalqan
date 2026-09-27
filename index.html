@@ -22,7 +22,7 @@
     <symbol id="activity" viewBox="0 0 24 24"><path d="M3 12h4l3-7 4 14 3-7h4"/></symbol>
     <symbol id="info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 11v6m0-10h.01"/></symbol>
     <symbol id="eye" viewBox="0 0 24 24"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12Z"/><circle cx="12" cy="12" r="3"/></symbol>
-    <symbol id="reset" viewBox="0 0 24 24"><path d="M3 10a9 9 0 1 1 2 8M3 4v6h6"/></symbol>
+    <symbol id="icon-reset" viewBox="0 0 24 24"><path d="M3 10a9 9 0 1 1 2 8M3 4v6h6"/></symbol>
     <symbol id="check" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></symbol>
     <symbol id="cross" viewBox="0 0 24 24"><path d="m6 6 12 12M18 6 6 18"/></symbol>
     <symbol id="terminal" viewBox="0 0 24 24"><path d="m5 6 5 6-5 6m8 0h6"/></symbol>
@@ -45,7 +45,7 @@
       </section>
       <section class="card log-card" aria-labelledby="log-heading"><div class="card-head"><div class="heading"><svg aria-hidden="true"><use href="#activity"/></svg><h2 id="log-heading">Әрекеттер журналы</h2></div><span class="live-badge"><span class="dot"></span>Тікелей</span></div>
         <div class="log-content" id="log-content" tabindex="0" role="region" aria-label="Әрекеттер тізімі"><div class="empty" id="empty-log"><div class="empty-icon"><svg aria-hidden="true"><use href="#terminal"/></svg></div><h3>Әзірге әрекет жоқ</h3><p>Кіру әрекеттеріңіз бен олардың нәтижесі осында көрсетіледі.</p></div><ol id="log-list" class="log-list" aria-label="Соңғы әрекеттер алдымен"></ol></div>
-        <div class="log-footer"><span class="event-count" id="event-count">0 әрекет</span><button type="button" class="reset" id="reset"><svg aria-hidden="true"><use href="#reset"/></svg>Қайта бастау</button></div>
+        <div class="log-footer"><span class="event-count" id="event-count">0 әрекет</span><button type="button" class="reset" id="reset"><svg aria-hidden="true"><use href="#icon-reset"/></svg>Қайта бастау</button></div>
       </section>
     </div>
     <aside class="info"><svg aria-hidden="true"><use href="#info"/></svg><div><h2>Қорғаныс қалай жұмыс істейді?</h2><p>Қатарынан <strong>5 қате әрекет</strong> → <strong>60 секунд бұғаттау</strong>. Сәтті кіру қате әрекеттер санын нөлге түсіреді. Бұл — оқу демосы; нақты тіркелгі немесе жеке пароль қажет емес.</p></div></aside>
@@ -117,11 +117,6 @@
       form.addEventListener('submit', event => {
         event.preventDefault();
         if (refresh()) return;
-        if (!username.value.trim() || !password.value) {
-          status('Логин мен парольді толтырыңыз.', 'error');
-          (!username.value.trim() ? username : password).focus();
-          return;
-        }
         if (username.value === 'student' && password.value === '123456') {
           state.failures = 0;
           record('success', 'Кіру сәтті'); status('Кіру сәтті', 'success');
@@ -132,8 +127,11 @@
             record('locked', 'Қате деректер · 60 секундқа бұғатталды');
             status('Қатарынан 5 қате әрекет. Кіру 60 секундқа бұғатталды.', 'locked');
           } else {
-            record('error', 'Кіру сәтсіз · логин немесе пароль қате');
-            status('Логин немесе пароль қате. Қалған мүмкіндік: ' + (5 - state.failures) + '.', 'error');
+            const reason = !username.value.trim() || !password.value
+              ? 'Логин мен парольді толтырыңыз.'
+              : 'Логин немесе пароль қате.';
+            record('error', 'Кіру сәтсіз · ' + state.failures + '/5 · ' + reason);
+            status(reason + ' Қате әрекеттер: ' + state.failures + '/5. Қалған мүмкіндік: ' + (5 - state.failures) + '.', 'error');
           }
         }
         refresh();
@@ -148,7 +146,7 @@
         try { sessionStorage.removeItem(KEY); } catch (_) {}
         form.reset(); password.type = 'password';
         $('toggle-password').setAttribute('aria-pressed', 'false'); $('toggle-password').setAttribute('aria-label', 'Парольді көрсету');
-        $('countdown').textContent = '01:00';
+        $('countdown').textContent = '00:00';
         renderLog(); refresh(); status('Барлығы тазаланды. Демоны қайта бастаңыз.');
       });
       renderLog();
