@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="kk">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#0b0f0e">
+  <meta name="description" content="QALQAN — кіру қауіпсіздігін тәжірибе арқылы үйренуге арналған қазақша демо.">
+  <title>QALQAN — Киберқауіпсіздік демосы</title>
+  <style>
+    :root{color-scheme:dark;--bg:#0b0f0e;--panel:#121815;--line:#2b3530;--muted:#a4b0a8;--text:#f2f6f3;--green:#b5f76a;--red:#ffaba7;--amber:#f7cf7e}
+    *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:16px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif}button,input{font:inherit}button{cursor:pointer}button:disabled{cursor:not-allowed}button,input,a{-webkit-tap-highlight-color:transparent}button:focus-visible,input:focus-visible,a:focus-visible{outline:3px solid var(--green);outline-offset:4px}svg{width:24px;height:24px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0}.symbols{position:absolute;width:0;height:0;overflow:hidden}.wrap{width:min(1120px,100% - 48px);margin:auto}header{border-bottom:1px solid var(--line)}.topbar{min-height:96px;display:flex;align-items:center;justify-content:space-between;gap:16px}.brand{display:flex;align-items:center;gap:12px;font-size:25px;font-weight:800;letter-spacing:3px}.brand-icon{width:42px;height:46px;color:var(--green)}.badge{display:inline-flex;align-items:center;gap:9px;border:1px solid #3f5034;border-radius:100px;padding:7px 14px;color:var(--green);font-size:16px;white-space:nowrap}.dot{width:7px;height:7px;background:currentColor;border-radius:50%;flex-shrink:0}.hero{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:46px 0 36px}.eyebrow{color:var(--green);font-size:16px;letter-spacing:2px;font-weight:600;margin:0 0 14px}.hero h1{font-size:clamp(32px,4.2vw,48px);line-height:1.16;letter-spacing:-1.5px;margin:0 0 16px;font-weight:650}.hero h1 span{color:var(--green)}.hero p:last-child{color:var(--muted);max-width:570px;margin:0;font-size:18px}.hero-art{width:158px;height:158px;display:grid;place-items:center;border:1px solid #2b3a2f;border-radius:50%;background:radial-gradient(circle,#b5f7130f,transparent 70%);position:relative;flex-shrink:0}.hero-art:before{content:"";position:absolute;inset:13px;border:1px dashed #354a37;border-radius:50%}.hero-art svg{width:70px;height:78px;color:var(--green)}.workspace{display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:start}.card{border:1px solid var(--line);border-radius:18px;background:var(--panel);min-width:0;overflow:hidden}.card-head{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:24px 28px;border-bottom:1px solid var(--line)}.heading{display:flex;align-items:center;gap:12px}.heading svg{color:var(--green)}h2{font-size:21px;line-height:1.3;letter-spacing:-.3px;margin:0;font-weight:600}.step-number{font:16px/1.5 ui-monospace,Consolas,monospace;color:var(--muted)}.form-body{padding:24px 28px 28px}.credentials{background:#1d291b;border:1px solid #394932;border-radius:10px;padding:15px 17px;margin-bottom:24px}.credentials-title{color:var(--green);display:flex;align-items:center;gap:8px;margin-bottom:8px;font-weight:600}.credentials-title svg{width:19px;height:19px}.credential-values{display:flex;flex-wrap:wrap;gap:8px 28px;color:var(--muted)}code{font:16px/1.5 ui-monospace,SFMono-Regular,Consolas,monospace;color:var(--text)}label{display:block;margin:18px 0 8px;font-weight:500}input{min-width:0;width:100%;height:54px;padding:0 16px;border:1px solid #3d4841;border-radius:9px;background:#0d120f;color:var(--text);font-size:16px}input::placeholder{color:#829087}input:disabled{opacity:.6}.password-field{position:relative}.password-field input{padding-right:60px}.eye-button{position:absolute;right:4px;top:4px;width:46px;height:46px;display:grid;place-items:center;background:transparent;border:0;color:var(--muted);border-radius:6px}.attempt-label{display:flex;justify-content:space-between;gap:12px;color:var(--muted);margin:22px 0 10px}.attempt-label strong{font-weight:500;color:var(--text)}.attempt-bars{display:flex;gap:6px;margin-bottom:23px}.attempt-bars span{height:5px;flex:1;border-radius:3px;background:#303b33}.attempt-bars span.used{background:var(--amber)}.primary{width:100%;min-height:54px;padding:12px 20px;border:1px solid var(--green);border-radius:9px;background:var(--green);color:#182310;font-weight:700;display:flex;align-items:center;justify-content:center;gap:12px}.primary:hover:not(:disabled){background:#c6ff89}.primary:disabled{background:#303a2b;border-color:#46513a;color:#c3d1b6}.status{display:flex;align-items:flex-start;gap:10px;margin-top:18px;color:var(--muted);font-size:16px}.status svg{width:20px;height:24px}.status.success{color:var(--green)}.status.error{color:var(--red)}.status.locked{color:var(--amber)}.lock-panel{margin-top:18px;padding:16px;border:1px solid #64522e;background:#2c2519;border-radius:10px;color:var(--amber)}.lock-panel[hidden]{display:none}.lock-row{display:flex;justify-content:space-between;align-items:center;gap:8px}.countdown{font:600 25px/1.4 ui-monospace,Consolas,monospace;white-space:nowrap}.lock-panel p{margin:7px 0 0;font-size:16px}.log-card{display:flex;flex-direction:column;min-height:526px}.live-badge{color:var(--muted);display:flex;align-items:center;gap:8px}.live-badge .dot{color:var(--green)}.log-content{flex:1;padding:0 28px;min-height:326px;max-height:432px;overflow:auto;overscroll-behavior:contain}.empty{display:flex;align-items:center;justify-content:center;text-align:center;flex-direction:column;min-height:326px;padding:28px 6px}.empty-icon{height:60px;width:60px;border:1px solid #364039;border-radius:16px;display:grid;place-items:center;color:#96a78e;background:#1a211c;margin-bottom:20px}.empty-icon svg{height:28px;width:28px}.empty h3{font-size:18px;font-weight:500;margin:0 0 7px}.empty p{max-width:290px;margin:0;color:var(--muted);font-size:16px}.log-list{list-style:none;margin:0;padding:0}.log-entry{display:flex;gap:12px;align-items:flex-start;padding:17px 0;border-bottom:1px solid var(--line)}.log-icon{width:32px;height:32px;display:grid;place-items:center;border-radius:50%;background:#262e24;color:var(--green);flex-shrink:0}.log-icon svg{width:18px;height:18px}.log-entry.error .log-icon{background:#34231f;color:var(--red)}.log-entry.locked .log-icon{background:#352d1f;color:var(--amber)}.log-details{min-width:0;flex:1;overflow-wrap:anywhere}.log-details p{margin:0 0 3px;font-size:16px}.log-details time{font:16px/1.5 ui-monospace,Consolas,monospace;color:var(--muted)}.log-index{color:var(--muted);font:16px/1.5 ui-monospace,Consolas,monospace;padding-top:3px}.log-footer{border-top:1px solid var(--line);padding:20px 28px;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}.event-count{color:var(--muted)}.reset{min-height:48px;display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:10px 14px;background:transparent;color:var(--text);border:1px solid #435044;border-radius:8px}.reset svg{width:18px;height:18px}.reset:hover{background:#232d25}.info{margin:24px 0 0;padding:21px 24px;border:1px solid var(--line);border-radius:14px;display:flex;gap:16px;align-items:flex-start}.info>svg{color:var(--green);margin-top:2px}.info h2{font-size:17px;margin-bottom:5px}.info p{margin:0;color:var(--muted);font-size:16px}.info strong{color:#d6dfd9;font-weight:500}footer{display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap;padding:27px 0 32px;color:#93a197;font-size:16px}.footer-mark{display:flex;align-items:center;gap:8px}.footer-mark svg{width:18px;height:18px}body::selection{background:var(--green);color:#0b0f0e}
+    @media(max-width:760px){.wrap{width:calc(100% - 32px)}.topbar{min-height:80px}.brand{font-size:22px;gap:8px;letter-spacing:2px}.brand-icon{width:33px;height:37px}.badge{padding:6px 10px;gap:7px}.hero{padding:32px 0 26px}.hero h1{font-size:35px;letter-spacing:-1px}.hero p:last-child{font-size:16px}.hero-art{display:none}.eyebrow{letter-spacing:1px;margin-bottom:12px}.workspace{grid-template-columns:1fr;gap:18px}.card-head{padding:20px}.form-body{padding:20px}.log-content{padding:0 20px;min-height:250px;max-height:380px}.empty{min-height:250px}.log-card{min-height:0}.log-footer{padding:17px 20px}.info{padding:18px;gap:12px;margin-top:18px}footer{padding:24px 0;gap:8px}.hero h1 span{display:block}}
+    @media(max-width:359px){.wrap{width:calc(100% - 24px)}.brand{font-size:20px}.badge{padding:6px 8px}.hero h1{font-size:32px}.card-head,.form-body{padding:18px}.live-badge{gap:5px}.heading{gap:8px}h2{font-size:19px}}
+    @media(prefers-reduced-motion:no-preference){button{transition:background .15s,color .15s}.log-entry{animation:appear .2s ease-out}@keyframes appear{from{opacity:0;transform:translateY(-4px)}to{opacity:1;transform:translateY(0)}}}
+  </style>
+</head>
+<body>
+  <svg class="symbols" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><defs>
+    <symbol id="shield" viewBox="0 0 24 24"><path d="M12 2 3.5 5.5V11c0 5.3 3.8 8.8 8.5 11 4.7-2.2 8.5-5.7 8.5-11V5.5L12 2Z"/><path d="m8 12 2.5 2.5L16 9"/></symbol>
+    <symbol id="lock" viewBox="0 0 24 24"><rect x="5" y="10" width="14" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3M12 14v3"/></symbol>
+    <symbol id="arrow" viewBox="0 0 24 24"><path d="M4 12h16m-6-6 6 6-6 6"/></symbol>
+    <symbol id="activity" viewBox="0 0 24 24"><path d="M3 12h4l3-7 4 14 3-7h4"/></symbol>
+    <symbol id="info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 11v6m0-10h.01"/></symbol>
+    <symbol id="eye" viewBox="0 0 24 24"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12Z"/><circle cx="12" cy="12" r="3"/></symbol>
+    <symbol id="reset" viewBox="0 0 24 24"><path d="M3 10a9 9 0 1 1 2 8M3 4v6h6"/></symbol>
+    <symbol id="check" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></symbol>
+    <symbol id="cross" viewBox="0 0 24 24"><path d="m6 6 12 12M18 6 6 18"/></symbol>
+    <symbol id="terminal" viewBox="0 0 24 24"><path d="m5 6 5 6-5 6m8 0h6"/></symbol>
+  </defs></svg>
+  <header><div class="wrap topbar"><div class="brand"><svg class="brand-icon" aria-hidden="true"><use href="#shield"/></svg>QALQAN</div><span class="badge"><span class="dot"></span>Демо режим</span></div></header>
+  <main class="wrap">
+    <section class="hero" aria-labelledby="title"><div><p class="eyebrow">КИБЕРҚАУІПСІЗДІК ЗЕРТХАНАСЫ</p><h1 id="title">Қауіпсіздікті <span>тәжірибеде сына.</span></h1><p>Жүйеге кіріп көріңіз. Қате әрекеттерден қорғаныс қалай жұмыс істейтінін бақылаңыз.</p></div><div class="hero-art" aria-hidden="true"><svg><use href="#shield"/></svg></div></section>
+    <div class="workspace">
+      <section class="card" aria-labelledby="login-heading"><div class="card-head"><div class="heading"><svg aria-hidden="true"><use href="#lock"/></svg><h2 id="login-heading">Жүйеге кіру</h2></div><span class="step-number">01 / КІРУ</span></div>
+        <div class="form-body"><div class="credentials" id="demo-data"><div class="credentials-title"><svg aria-hidden="true"><use href="#info"/></svg>Сынақ деректері</div><div class="credential-values"><span>Логин: <code>student</code></span><span>Пароль: <code>123456</code></span></div></div>
+          <form id="login-form" novalidate aria-describedby="demo-data">
+            <label for="username">Логин</label><input id="username" name="username" type="text" placeholder="Логинді енгізіңіз" autocomplete="off" autocapitalize="none" spellcheck="false" maxlength="128" enterkeyhint="next" required>
+            <label for="password">Пароль</label><div class="password-field"><input id="password" name="password" type="password" placeholder="Парольді енгізіңіз" autocomplete="off" maxlength="128" enterkeyhint="go" required><button id="toggle-password" type="button" class="eye-button" aria-label="Парольді көрсету" aria-pressed="false"><svg aria-hidden="true"><use href="#eye"/></svg></button></div>
+            <div class="attempt-label"><span>Қатарынан қате әрекеттер</span><strong id="attempt-count">0 / 5</strong></div><div id="attempt-bars" class="attempt-bars" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span></div>
+            <button id="submit" class="primary" type="submit"><span id="submit-label">Кіру</span><svg aria-hidden="true"><use id="submit-icon" href="#arrow"/></svg></button>
+          </form>
+          <div id="lock-panel" class="lock-panel" hidden><div class="lock-row"><strong>Уақытша бұғатталды</strong><span id="countdown" class="countdown" role="timer" aria-label="Қалған уақыт">01:00</span></div><p>5 қате әрекет тіркелді. Кері санау аяқталған соң қайта кіре аласыз.</p></div>
+          <div id="status" class="status" role="status" aria-live="polite" aria-atomic="true"><svg aria-hidden="true"><use id="status-icon" href="#shield"/></svg><span id="status-text">Жүйе дайын. Алғашқы әрекетті жасап көріңіз.</span></div>
+        </div>
+      </section>
+      <section class="card log-card" aria-labelledby="log-heading"><div class="card-head"><div class="heading"><svg aria-hidden="true"><use href="#activity"/></svg><h2 id="log-heading">Әрекеттер журналы</h2></div><span class="live-badge"><span class="dot"></span>Тікелей</span></div>
+        <div class="log-content" id="log-content" tabindex="0" role="region" aria-label="Әрекеттер тізімі"><div class="empty" id="empty-log"><div class="empty-icon"><svg aria-hidden="true"><use href="#terminal"/></svg></div><h3>Әзірге әрекет жоқ</h3><p>Кіру әрекеттеріңіз бен олардың нәтижесі осында көрсетіледі.</p></div><ol id="log-list" class="log-list" aria-label="Соңғы әрекеттер алдымен"></ol></div>
+        <div class="log-footer"><span class="event-count" id="event-count">0 әрекет</span><button type="button" class="reset" id="reset"><svg aria-hidden="true"><use href="#reset"/></svg>Қайта бастау</button></div>
+      </section>
+    </div>
+    <aside class="info"><svg aria-hidden="true"><use href="#info"/></svg><div><h2>Қорғаныс қалай жұмыс істейді?</h2><p>Қатарынан <strong>5 қате әрекет</strong> → <strong>60 секунд бұғаттау</strong>. Сәтті кіру қате әрекеттер санын нөлге түсіреді. Бұл — оқу демосы; нақты тіркелгі немесе жеке пароль қажет емес.</p></div></aside>
+    <noscript><p>Демоны пайдалану үшін браузерде JavaScript қосулы болуы керек.</p></noscript>
+  </main>
+  <footer class="wrap"><span>QALQAN · Киберқауіпсіздікті бірге үйренейік.</span><span class="footer-mark"><svg aria-hidden="true"><use href="#shield"/></svg>Деректер тек осы браузерде</span></footer>
+  <script>
+    (() => {
+      'use strict';
+      const KEY = 'qalqan-demo-v1';
+      const $ = id => document.getElementById(id);
+      const form = $('login-form'), username = $('username'), password = $('password');
+      let state = { failures: 0, lockedUntil: 0, events: [] };
+      // Session storage keeps the demo across reloads, without storing credentials.
+      try {
+        const saved = JSON.parse(sessionStorage.getItem(KEY));
+        if (saved && Number.isInteger(saved.failures) && saved.failures >= 0 && saved.failures <= 5 && Number.isFinite(saved.lockedUntil) && Array.isArray(saved.events)) {
+          state = { failures: saved.failures, lockedUntil: saved.lockedUntil, events: saved.events.filter(e => e && ['success','error','locked'].includes(e.kind) && typeof e.message === 'string' && Number.isFinite(e.time)) };
+        }
+      } catch (_) { /* The demo also works when browser storage is unavailable. */ }
+      function save() { try { sessionStorage.setItem(KEY, JSON.stringify(state)); } catch (_) {} }
+      function status(message, kind = '') {
+        $('status').className = 'status' + (kind ? ' ' + kind : '');
+        $('status-text').textContent = message;
+        $('status-icon').setAttribute('href', kind === 'success' ? '#check' : kind === 'error' ? '#cross' : kind === 'locked' ? '#lock' : '#shield');
+      }
+      function renderLog() {
+        const fragment = document.createDocumentFragment();
+        state.events.slice().reverse().forEach((entry, index) => {
+          const li = document.createElement('li'); li.className = 'log-entry ' + entry.kind;
+          const icon = document.createElement('span'); icon.className = 'log-icon';
+          const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg'); svg.setAttribute('aria-hidden', 'true');
+          const use = document.createElementNS('http://www.w3.org/2000/svg', 'use'); use.setAttribute('href', entry.kind === 'success' ? '#check' : entry.kind === 'locked' ? '#lock' : '#cross');
+          svg.append(use); icon.append(svg);
+          const details = document.createElement('div'); details.className = 'log-details';
+          const message = document.createElement('p'); message.textContent = entry.message;
+          const time = document.createElement('time'); const date = new Date(entry.time);
+          time.dateTime = date.toISOString(); time.textContent = new Intl.DateTimeFormat('kk-KZ', {day:'2-digit',month:'2-digit',year:'numeric',hour:'2-digit',minute:'2-digit',second:'2-digit',hour12:false}).format(date);
+          const number = document.createElement('span'); number.className = 'log-index'; number.textContent = '#' + (state.events.length - index);
+          details.append(message, time); li.append(icon, details, number); fragment.append(li);
+        });
+        $('log-list').replaceChildren(fragment); $('empty-log').hidden = state.events.length > 0;
+        // Explicit display keeps the empty-state flex rule from overriding hidden.
+        $('empty-log').style.display = state.events.length ? 'none' : '';
+        $('event-count').textContent = state.events.length + ' әрекет';
+      }
+      function record(kind, message) {
+        state.events.push({ kind, message, time: Date.now() }); save(); renderLog(); $('log-content').scrollTop = 0;
+      }
+      function refresh() {
+        const now = Date.now();
+        if (state.lockedUntil && now >= state.lockedUntil) {
+          state.lockedUntil = 0; state.failures = 0; save();
+          status('Бұғаттау аяқталды. Қайта кіріп көріңіз.');
+        }
+        const locked = state.lockedUntil > now;
+        username.disabled = password.disabled = $('submit').disabled = $('toggle-password').disabled = locked;
+        $('lock-panel').hidden = !locked;
+        $('submit-label').textContent = locked ? 'Кіру бұғатталған' : 'Кіру';
+        $('submit-icon').setAttribute('href', locked ? '#lock' : '#arrow');
+        $('attempt-count').textContent = state.failures + ' / 5';
+        Array.from($('attempt-bars').children).forEach((bar, i) => bar.classList.toggle('used', i < state.failures));
+        if (locked) {
+          const remaining = Math.ceil((state.lockedUntil - now) / 1000);
+          $('countdown').textContent = String(Math.floor(remaining / 60)).padStart(2, '0') + ':' + String(remaining % 60).padStart(2, '0');
+        }
+        return locked;
+      }
+      form.addEventListener('submit', event => {
+        event.preventDefault();
+        if (refresh()) return;
+        if (!username.value.trim() || !password.value) {
+          status('Логин мен парольді толтырыңыз.', 'error');
+          (!username.value.trim() ? username : password).focus();
+          return;
+        }
+        if (username.value === 'student' && password.value === '123456') {
+          state.failures = 0;
+          record('success', 'Кіру сәтті'); status('Кіру сәтті', 'success');
+        } else {
+          state.failures++;
+          if (state.failures >= 5) {
+            state.lockedUntil = Date.now() + 60000;
+            record('locked', 'Қате деректер · 60 секундқа бұғатталды');
+            status('Қатарынан 5 қате әрекет. Кіру 60 секундқа бұғатталды.', 'locked');
+          } else {
+            record('error', 'Кіру сәтсіз · логин немесе пароль қате');
+            status('Логин немесе пароль қате. Қалған мүмкіндік: ' + (5 - state.failures) + '.', 'error');
+          }
+        }
+        refresh();
+      });
+      $('toggle-password').addEventListener('click', () => {
+        const show = password.type === 'password'; password.type = show ? 'text' : 'password';
+        $('toggle-password').setAttribute('aria-pressed', String(show));
+        $('toggle-password').setAttribute('aria-label', show ? 'Парольді жасыру' : 'Парольді көрсету');
+      });
+      $('reset').addEventListener('click', () => {
+        state = { failures: 0, lockedUntil: 0, events: [] };
+        try { sessionStorage.removeItem(KEY); } catch (_) {}
+        form.reset(); password.type = 'password';
+        $('toggle-password').setAttribute('aria-pressed', 'false'); $('toggle-password').setAttribute('aria-label', 'Парольді көрсету');
+        $('countdown').textContent = '01:00';
+        renderLog(); refresh(); status('Барлығы тазаланды. Демоны қайта бастаңыз.');
+      });
+      renderLog();
+      if (refresh()) status('Кіру уақытша бұғатталған. Кері санаудың аяқталуын күтіңіз.', 'locked');
+      setInterval(refresh, 250);
+      document.addEventListener('visibilitychange', refresh);
+      window.addEventListener('pageshow', refresh);
+    })();
+  </script>
+</body>
+</html>
